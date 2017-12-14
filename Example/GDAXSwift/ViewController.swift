@@ -36,4 +36,7 @@ class ViewController: UIViewController {
 		})
 	}
 	
+    @IBAction func btnWebSocketTest_Tap(_ sender: Any) {
+        gdaxClient.websocket.start()
+    }
 }
