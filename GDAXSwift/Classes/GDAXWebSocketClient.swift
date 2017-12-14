@@ -23,7 +23,7 @@ public class GDAXWebSocketClient : WebSocketDelegate {
         socket.connect()
         
         let request = GDAXSubscriptionRequest(channels: [GDAXChannel(productIds: ["BTC-USD"], name: GDAXChannelName.heartbeat.rawValue)])
-        socket.write(data: request.asJSON()!)
+        socket.write(data: request.asJSON().jsonData!)
     }
     
     // MARK: Websocket Delegate Methods.
