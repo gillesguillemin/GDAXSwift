@@ -13,4 +13,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.source_files = 'GDAXSwift/Classes/**/*'
   s.dependency 'CryptoSwift'
+  s.dependency 'Starscream'
+
+
 end

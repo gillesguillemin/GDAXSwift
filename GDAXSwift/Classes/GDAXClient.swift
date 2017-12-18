@@ -24,10 +24,15 @@ public class GDAXClient {
 	public var `private`: GDAXPrivateClient {
 		return _private
 	}
+    
+    public var `websocket`: GDAXWebSocketClient {
+        return _websocket
+    }
 	
 	private var _public: GDAXPublicClient!
 	private var _private: GDAXPrivateClient!
-	
+    private var _websocket: GDAXWebSocketClient!
+
 	public init(apiKey: String?, secret64: String?, passphrase: String?, isSandbox: Bool = false) {
 		self.apiKey = apiKey
 		self.secret64 = secret64
@@ -36,6 +41,7 @@ public class GDAXClient {
 		self.baseURLString = (!isSandbox) ? GDAXClient.baseAPIURLString : GDAXClient.baseSandboxAPIURLString
 		self._public = GDAXPublicClient(gdaxClient: self)
 		self._private = GDAXPrivateClient(gdaxClient: self)
+        self._websocket = GDAXWebSocketClient(gdaxClient: self)
 	}
 	
 	public convenience init(isSandbox: Bool = false) {
